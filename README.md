@@ -65,7 +65,7 @@ The simulation renders a graphical representation of the robot's environment:
 | :--- | :--- |
 | **Inverse Kinematics (IK)** | Calculating variable joint parameters (angles) needed to place the end-effector at a specific position and orientation. |
 | **Singularity Handling** | Managing points where the robot loses a degree of freedom (e.g., fully extended arm). |
-| **Geometric Constraints** | Validating that $\sqrt{x^2 + y^2} \le L_1 + L_2$ and $\sqrt{x^2 + y^2} \ge |L_1 - L_2|$. |
+| **Geometric Constraints** | Validating that $\sqrt{x^2 + y^2} \le L_1 + L_2$ and $\sqrt{x^2 + y^2} \ge \lvert L_1 - L_2 \rvert$. |
 
 <br>
 
