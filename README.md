@@ -70,5 +70,5 @@ The simulation renders a graphical representation of the robot's environment:
 <br>
 
 <div align="center">
-  <sub>Made for Production and Management Engineering (Robotics Studies)</sub>
+  <sub>📌Made for Production and Management Engineering (Robotics Studies)</sub>
 </div>
