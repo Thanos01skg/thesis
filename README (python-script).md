@@ -21,3 +21,11 @@ The script initializes four distinct virtual sensors:
 2. **TempS_ID_2**: 32°C - 40°C
 3. **TempS_ID_3**: 28°C - 32°C
 4. **HumidityS_ID_1**: 1% - 3% (Standard deviation)
+
+
+---
+
+
+### 🔗 Source Code
+You can explore the full Python Script here:
+* 📄 [**View Python Script**](./IotSignalGenerator.py)
