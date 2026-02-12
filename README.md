@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1>🌡️ 🏭 Industrial IoT Sensor Simulation</h1>
+  <h1>🏭 Industrial IoT Sensor Simulation</h1>
   
   <p>
     <b>A Web-based System for Managing Temperature & Humidity Data.</b>
