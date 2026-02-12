@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1>🌡️ Django CRUD Interface: Factory Environmental Monitor</h1>
+  <h1>🌡️ 🏭 Industrial IoT Sensor Simulation</h1>
   
   <p>
     <b>A Web-based System for Managing Temperature & Humidity Data.</b>
@@ -17,3 +17,44 @@
 </div>
 
 ---
+
+## 📖 Overview
+The goal of this project is to demonstrate the **collection, transmission, and management of sensor data** in real-time. It highlights the importance of automation in industrial monitoring by simulating:
+* **Temperature Sensors**
+* **Humidity Sensors**
+
+This script acts as the "Client" side of the architecture, sending continuous streams of data to the central Django server.
+
+---
+
+## 🧠 Code Architecture
+The simulation is built using Object-Oriented Programming (OOP) in Python, featuring two main classes as described in our documentation:
+
+### 1. `class HTTP_request`
+* **Role**: Manages the communication with the server.
+* **Functionality**: Handles the device registration and sends `POST` requests to the Django REST API endpoints.
+
+### 2. `class Sensor`
+* **Role**: Represents the physical hardware.
+* **Functionality**: 
+    * Generates random measurement values within realistic ranges.
+    * Uses the parent `HTTP_request` class to transmit these values as "Signals".
+
+---
+
+## 📡 Data Flow & Integration
+This script is designed to feed data into a Django-based backend.
+
+1.  **Data Generation**: The `Sensor` class creates a random data point.
+2.  **Transmission**: The script packages this data into a JSON payload.
+3.  **API Consumption**: Data is sent via HTTP to the Django REST API.
+4.  **Visualization**: The data is then visualized in the backend's **AdminLTE** dashboard and Real-Time Graphs for decision-making.
+
+---
+
+## 🚀 Usage
+
+To run the simulation, ensure your Django server is running first, then execute:
+
+```bash
+python sensor_simulation.py
