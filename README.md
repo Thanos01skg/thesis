@@ -69,8 +69,6 @@ To access the dashboard, an administrator account is required. We create a super
 python manage.py createsuperuser
 ```
 
----
-
 ### 🎛️ The Dashboard Interface
 Once logged in at `http://127.0.0.1:8000/admin/`, the system provides two main management modules under the Myapp section:
 
