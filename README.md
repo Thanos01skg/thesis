@@ -110,9 +110,8 @@ To ensure easy distinction between different data sources, each sensor is mapped
 
 *Observation:* As seen in the sample data, the Humidity sensor (Purple) maintains a significantly lower and stable value compared to the fluctuating temperature readings.
 
----
 
-### 🏭 Industrial Application & Utility
+### Industrial Application & Utility
 This visualization is not just for display; it serves vital operational purposes in an industrial setting:
 
 1.  **Live Monitoring**: Provides an immediate overview of the facility's status.
