@@ -117,3 +117,49 @@ This visualization is not just for display; it serves vital operational purposes
 1.  **Live Monitoring**: Provides an immediate overview of the facility's status.
 2.  **Anomaly Detection**: Helps operators instantly spot sudden spikes or drops in temperature/humidity that could indicate equipment failure or fire hazards.
 3.  **Decision Making**: Data trends facilitate rapid responses, such as activating air conditioning systems or dehumidifiers when thresholds are breached.
+
+---
+
+## 4️⃣ Part 4: Mobile Access (LAN)
+
+To demonstrate the versatility of the system, we configured the Django development server to be accessible via smartphones. This allows engineers to monitor the **Industrial IoT System** remotely while moving around the facility, rather than being tied to a desktop.
+
+### 🔗 Network Configuration
+By default, Django runs on `localhost` (127.0.0.1), which is isolated to the computer. To access it from a phone:
+
+1.  **Same Network**: Ensure both the laptop (server) and the smartphone are connected to the exact same Wi-Fi network.
+2.  **Find Host IP**:
+    * Open the Command Prompt (`cmd`) on Windows.
+    * Run the command: `ipconfig`.
+    * Locate the **IPv4 Address** (e.g., `192.168.1.116`) under the Wireless LAN adapter.
+
+---
+
+### ⚙️ Security Settings (`ALLOWED_HOSTS`)
+Django restricts access to unknown hosts for security. If you try to connect via IP immediately, you will encounter a **DisallowedHost** error.
+
+To fix this, we must explicitly allow our local IP in the settings:
+
+1.  Open `django_project/settings.py`.
+2.  Locate the `ALLOWED_HOSTS` list (approx. line 28).
+3.  Add your computer's IPv4 address and localhost as strings:
+
+```python
+# Before
+ALLOWED_HOSTS = []
+
+# After (Replace with your specific IP)
+ALLOWED_HOSTS = ['192.168.1.116', '127.0.0.1']
+```
+
+### 🚀 Running on LAN
+Once configured, restart the server binding it to your specific IP address instead of localhost.
+```bash
+python manage.py runserver 192.168.1.116:8000
+```
+
+### Access on Mobile:
+Open your phone's web browser and type the address:
+`http://192.168.1.116:8000`
+
+You will now see the live Django interface and Real-Time Charts directly on your mobile device.
