@@ -85,3 +85,36 @@ This view provides a log of all incoming data packets.
 
 * Data Integrity: Allows admins to inspect specific signal values and types (e.g., verifying a temperature spike).
 * CRUD Operations: Signals can be edited or removed if data cleansing is required.
+
+---
+
+
+## 3️⃣ Part 3: Real-Time Data Visualization (The Graph)
+
+A critical component of this industrial monitoring system is the **Real-Time Line Chart** (`/temperature-chart/`). This visualization tool allows operators to track environmental changes instantly as data is received from the Python simulation script.
+
+### 📊 Chart Specifications
+The graph is designed for clarity and continuous updates:
+
+* **Update Frequency**: The chart refreshes in real-time, synchronizing with the 5-second transmission interval of the sensors.
+* **X-Axis (Time)**: Represents the timestamp in Hours:Minutes:Seconds (e.g., `20:44:49`), allowing for precise temporal tracking.
+* **Y-Axis (Value)**: Represents the measurement magnitude, covering the range for both Temperature (°C) and Humidity (%).
+
+### 🎨 Legend & Sensor Identification
+To ensure easy distinction between different data sources, each sensor is mapped to a specific color curve:
+
+* **⬛ Black Line**: `TempS_ID_1` (Temperature Sensor 1)
+* **🟥 Red Line**: `TempS_ID_2` (Temperature Sensor 2)
+* **🟩 Green Line**: `TempS_ID_3` (Temperature Sensor 3)
+* **🟪 Purple Line**: `HumidityS_ID_1` (Humidity Sensor)
+
+*Observation:* As seen in the sample data, the Humidity sensor (Purple) maintains a significantly lower and stable value compared to the fluctuating temperature readings.
+
+---
+
+### 🏭 Industrial Application & Utility
+This visualization is not just for display; it serves vital operational purposes in an industrial setting:
+
+1.  **Live Monitoring**: Provides an immediate overview of the facility's status.
+2.  **Anomaly Detection**: Helps operators instantly spot sudden spikes or drops in temperature/humidity that could indicate equipment failure or fire hazards.
+3.  **Decision Making**: Data trends facilitate rapid responses, such as activating air conditioning systems or dehumidifiers when thresholds are breached.
