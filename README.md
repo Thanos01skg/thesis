@@ -121,6 +121,9 @@ This visualization is not just for display; it serves vital operational purposes
 2.  **Anomaly Detection**: Helps operators instantly spot sudden spikes or drops in temperature/humidity that could indicate equipment failure or fire hazards.
 3.  **Decision Making**: Data trends facilitate rapid responses, such as activating air conditioning systems or dehumidifiers when thresholds are breached.
 
+![graph](https://github.com/user-attachments/assets/a63385a1-42df-446d-a44c-f580e319e050)
+
+
 ---
 
 ## 4️⃣ Part 4: Mobile Access (LAN)
