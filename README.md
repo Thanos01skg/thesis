@@ -3,7 +3,7 @@
   <h1>🏭 Industrial IoT Sensor Simulation</h1>
   
   <p>
-    <b>A Web-based System for Managing Temperature & Humidity Data.</b>
+    <b>A Python Simulation Script for Generating & Transmitting Industrial Sensor Data.</b>
   </p>
 
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django Badge" />
