@@ -47,6 +47,11 @@ When the script (`__main__`) is executed, it initializes the following virtual h
 
 This automated process mimics the continuous stream of data found in industrial safety and monitoring systems, allowing for real-time decision-making.
 
+### 📂 File Access
+You can view or download the complete `IotSignalGenerator.py` script from the link below:
+
+[View Source File](https://github.com/Thanos01skg/thesis/blob/main/IotSignalGenerator.py)
+
 ---
 
 ## 2️⃣ Part 2: Visualization & Administration (AdminLTE)
