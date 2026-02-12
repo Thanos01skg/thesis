@@ -18,43 +18,31 @@
 
 ---
 
-## 📖 Overview
-The goal of this project is to demonstrate the **collection, transmission, and management of sensor data** in real-time. It highlights the importance of automation in industrial monitoring by simulating:
-* **Temperature Sensors**
-* **Humidity Sensors**
+## 1️⃣ Part 1: Python Simulation (Devices & Signals)
 
-This script acts as the "Client" side of the architecture, sending continuous streams of data to the central Django server.
+The core of this project is a robust Python script designed to simulate a real-world Industrial IoT environment. It acts as the "Client" in our architecture, generating environmental data and transmitting it to the Django server via HTTP requests.
 
----
+### 🧠 System Architecture & Logic
+The simulation is built using **Object-Oriented Programming (OOP)** to ensure modularity and scalability. The code consists of two primary classes:
 
-## 🧠 Code Architecture
-The simulation is built using Object-Oriented Programming (OOP) in Python, featuring two main classes as described in our documentation:
+#### A. `class HTTP_request`
+This base class handles the networking layer. It is responsible for establishing communication with the Django REST API.
+* **Device Registration**: Uses the `create_device()` method to register a new sensor on the server via a `POST` request to the `/devices/` endpoint. It retrieves and stores the unique `device_id` assigned by the database.
+* **Signal Transmission**: Uses the `send_signal()` method to package the measurement data into a JSON payload and send it to the `/signals/` endpoint.
 
-### 1. `class HTTP_request`
-* **Role**: Manages the communication with the server.
-* **Functionality**: Handles the device registration and sends `POST` requests to the Django REST API endpoints.
+#### B. `class Sensor(HTTP_request)`
+This class inherits from `HTTP_request` and represents the physical hardware.
+* **Simulation Logic**: It takes `min` and `max` parameters to define the operating range of the sensor.
+* **Data Generation**: The `generate_random_signals()` method produces a random float value (rounded to 2 decimals) within the specified range to simulate real-time fluctuations.
+* **Timezone Awareness**: Utilizes the `pytz` library to attach an accurate timestamp (`Europe/Athens`) to every reading before sending it.
 
-### 2. `class Sensor`
-* **Role**: Represents the physical hardware.
-* **Functionality**: 
-    * Generates random measurement values within realistic ranges.
-    * Uses the parent `HTTP_request` class to transmit these values as "Signals".
+### 🔄 Execution Flow
+When the script (`__main__`) is executed, it initializes the following virtual hardware setup:
 
----
+1.  **Instantiation**: Creates 4 distinct sensors:
+    * 3x Temperature Sensors (monitoring ranges: 20-30°C, 32-40°C, 28-32°C).
+    * 1x Humidity Sensor (monitoring range: 1-3%).
+2.  **Continuous Loop**: The system enters an infinite `while True` loop.
+3.  **Interval**: Every **5 seconds**, it triggers all sensors to generate new data and push it to the server.
 
-## 📡 Data Flow & Integration
-This script is designed to feed data into a Django-based backend.
-
-1.  **Data Generation**: The `Sensor` class creates a random data point.
-2.  **Transmission**: The script packages this data into a JSON payload.
-3.  **API Consumption**: Data is sent via HTTP to the Django REST API.
-4.  **Visualization**: The data is then visualized in the backend's **AdminLTE** dashboard and Real-Time Graphs for decision-making.
-
----
-
-## 🚀 Usage
-
-To run the simulation, ensure your Django server is running first, then execute:
-
-```bash
-python sensor_simulation.py
+This automated process mimics the continuous stream of data found in industrial safety and monitoring systems, allowing for real-time decision-making.
