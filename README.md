@@ -46,3 +46,17 @@ When the script (`__main__`) is executed, it initializes the following virtual h
 3.  **Interval**: Every **5 seconds**, it triggers all sensors to generate new data and push it to the server.
 
 This automated process mimics the continuous stream of data found in industrial safety and monitoring systems, allowing for real-time decision-making.
+
+---
+
+## 2️⃣ Part 2: Visualization & Administration (AdminLTE)
+
+To provide a professional, industrial-grade user interface, this project integrates **Django AdminLTE 3**. This modern UI wrapper enhances the default Django administration panel, offering a responsive dashboard for managing IoT devices and monitoring signals.
+
+### 🛠️ Setup & Configuration
+
+#### 1. Installing AdminLTE
+The interface is powered by the `django-adminlte-3` package. This allows for a clean, side-menu navigation structure suitable for control room dashboards.
+
+```bash
+pip install django-adminlte-3
