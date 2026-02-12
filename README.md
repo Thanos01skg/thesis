@@ -60,3 +60,30 @@ The interface is powered by the `django-adminlte-3` package. This allows for a c
 
 ```bash
 pip install django-adminlte-3
+```
+
+#### 2. Access Control (Superuser)
+To access the dashboard, an administrator account is required. We create a superuser via the command line to gain full control over the application.
+
+```bash
+python manage.py createsuperuser
+```
+
+---
+
+🎛️ The Dashboard Interface
+Once logged in at `http://127.0.0.1:8000/admin/`, the system provides two main management modules under the Myapp section:
+
+A. Device Management (`/devices/`)
+This panel allows the operator to view and manage all registered IoT sensors.
+
+List View: Displays active sensors like `HumidityS_ID_1`, `TempS_ID_2`, etc..
+
+Actions: Supports searching, adding new devices manually, or deleting obsolete ones via dropdown actions.
+
+B. Signal Management (`/signals/`)
+This view provides a log of all incoming data packets.
+
+Data Integrity: Allows admins to inspect specific signal values and types (e.g., verifying a temperature spike).
+
+CRUD Operations: Signals can be edited or removed if data cleansing is required.
