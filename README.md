@@ -74,13 +74,13 @@ python manage.py createsuperuser
 ### 🎛️ The Dashboard Interface
 Once logged in at `http://127.0.0.1:8000/admin/`, the system provides two main management modules under the Myapp section:
 
-A. Device Management (`/devices/`)
+#### A. Device Management (`/devices/`)
 This panel allows the operator to view and manage all registered IoT sensors.
 
 * List View: Displays active sensors like `HumidityS_ID_1`, `TempS_ID_2`, etc..
 * Actions: Supports searching, adding new devices manually, or deleting obsolete ones via dropdown actions.
 
-B. Signal Management (`/signals/`)
+#### B. Signal Management (`/signals/`)
 This view provides a log of all incoming data packets.
 
 * Data Integrity: Allows admins to inspect specific signal values and types (e.g., verifying a temperature spike).
