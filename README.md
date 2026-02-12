@@ -50,7 +50,7 @@ This automated process mimics the continuous stream of data found in industrial 
 ### 📂 File Access
 You can view or download the complete `IotSignalGenerator.py` script from the link below:
 
-[View Source File](https://github.com/Thanos01skg/thesis/blob/main/IotSignalGenerator.py)
+[IotSignalGenerator.py](https://github.com/Thanos01skg/thesis/blob/main/IotSignalGenerator.py)
 
 ---
 
