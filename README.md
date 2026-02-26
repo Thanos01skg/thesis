@@ -26,7 +26,7 @@ A defining characteristic of this Industrial IoT simulation is its deployment st
 The Raspberry Pi 5 operates as a complete, standalone micro-server. It is powerful enough to simultaneously execute two heavily distinct roles without performance bottlenecks:
 
 * **A. The IoT Gateway (Client Layer):** The Pi continuously executes the `IotSignalGenerator.py` script. In this role, it acts as the physical sensor node, actively generating real-time temperature and humidity fluctuations, constructing the JSON payloads, and sending out HTTP requests.
-* **B. The Central Application Server (Backend Layer):** Concurrently, the exact same Raspberry Pi hosts the entire Django web application (managing the `mysite` and `myapp` directories). It listens for incoming POST requests via the REST API, processes the telemetry, writes the records directly to the local `db.sqlite3` database, and serves the AdminLTE dashboard and real-time graphs.
+* **B. The Central Application Server (Backend Layer):** Concurrently, the exact same Raspberry Pi hosts the entire Django web application (managing the `mysite` and `myapp` directories). It listens for incoming POST requests via the REST API, processes the telemetry and writes the records directly to the local `db.sqlite3` database.
 
 ### 2. Why Edge Computing Matters in Industry
 Deploying both the data generation and the data management layers on a local edge device (like the Raspberry Pi) provides several critical advantages for industrial facilities:
