@@ -40,6 +40,7 @@ Deploying both the data generation and the data management layers on a local edg
 
 This repository follows a standard Django architecture, logically separated into the main configuration and the core application logic.
 
+
 ### 📁 Root Directory
 The root directory acts as the foundation of the Django project, containing the central management files and folders.
 
@@ -48,7 +49,6 @@ The root directory acts as the foundation of the Django project, containing the 
 * **`db.sqlite3`**: The local SQLite database file responsible for storing all information related to users, devices, and signals.
 * **`manage.py`**: The essential command-line utility for executing administrative tasks, such as starting the development server (`runserver`) or creating an administrator account (`createsuperuser`).
 
----
 
 ### ⚙️ Core Application (`myapp/`)
 This directory defines the operational functionality, database structure, and logic of the system.
@@ -59,7 +59,6 @@ This directory defines the operational functionality, database structure, and lo
 * **`admin.py`**: Used to register the application's models within the Django Admin panel and to configure the AdminLTE interface.
 * **`signals.html`**: An HTML template file utilized for rendering and displaying the data visually within the web browser.
 
----
 
 ### 🛠️ Project Settings (`mysite/`)
 This directory contains the central configuration files that dictate the behavior of the entire Django project.
@@ -67,6 +66,8 @@ This directory contains the central configuration files that dictate the behavio
 * **`settings.py`**: The most critical configuration file. It declares the installed applications (such as `adminlte3`), defines security configurations (like `ALLOWED_HOSTS`), and establishes the database connection parameters.
 * **`urls.py`**: The central URL router of the project. It maps specific web addresses (e.g., `/admin/` or `/api/`) to their corresponding functions within the `myapp` application.
 * **`wsgi.py`**: The Web Server Gateway Interface file, which is necessary for connecting the project to standard web servers in a production deployment environment.
+
+---
 
 ## 1️⃣ Part 1: Python Simulation (Devices & Signals)
 
