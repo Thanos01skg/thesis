@@ -1,0 +1,16 @@
+<!-- myapp/templates/myapp/form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create/Update MyModel</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|yesno:"Update,Create" }} MyModel</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

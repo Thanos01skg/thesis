@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signals Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Signals Visualization</h1>
+    <canvas id="signalsChart" width="400" height="200"></canvas>
+    <script>
+        // Parse signals data
+        const signals = JSON.parse('{{ signals|escapejs }}');
+        
+        // Prepare data for the chart
+        const labels = signals.map(signal => new Date(signal.timestamp).toLocaleString());
+        const data = signals.map(signal => signal.value);
+
+        // Create the chart
+        const ctx = document.getElementById('signalsChart').getContext('2d');
+        const signalsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Signal Values',
+                    data: data,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'minute'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
