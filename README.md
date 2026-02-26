@@ -234,6 +234,6 @@ You will now see the live Django interface and Real-Time Charts directly on your
 ---
 
 ## 🎬 Live Demonstration
-The following video showcases the complete integration of the system. You can observe the **Python script** running on the left, sending data every 5 seconds, while the **Real-Time Chart** on the right updates instantly to reflect the new measurements.
+The following video showcases the complete integration of the system. You can observe the **Python script** running on the left, sending data every 5 seconds, while the **Real-Time Chart** on the right updates instantly to reflect the new measurements. Furthermore, it highlights the customized **Django AdminLTE interface**, illustrating how operators can seamlessly manage registered devices and monitor incoming signal logs in the backend.
 
 https://github.com/user-attachments/assets/d0deb265-c22f-4e5a-8a64-7439879d956a
