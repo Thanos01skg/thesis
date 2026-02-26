@@ -22,13 +22,13 @@
 
 A defining characteristic of this Industrial IoT simulation is its deployment strategy. Moving beyond a standard desktop development environment, the entire system was successfully configured to run autonomously on a single **Raspberry Pi 5**. This setup effectively demonstrates the power and feasibility of **Edge Computing** in modern industrial environments.
 
-### 🔄 The Dual-Role Setup
+### 1. The Dual-Role Setup
 The Raspberry Pi 5 operates as a complete, standalone micro-server. It is powerful enough to simultaneously execute two heavily distinct roles without performance bottlenecks:
 
-* **1. The IoT Gateway (Client Layer):** The Pi continuously executes the `IotSignalGenerator.py` script. In this role, it acts as the physical sensor node, actively generating real-time temperature and humidity fluctuations, constructing the JSON payloads, and sending out HTTP requests.
-* **2. The Central Application Server (Backend Layer):** Concurrently, the exact same Raspberry Pi hosts the entire Django web application (managing the `mysite` and `myapp` directories). It listens for incoming POST requests via the REST API, processes the telemetry, writes the records directly to the local `db.sqlite3` database, and serves the AdminLTE dashboard and real-time graphs.
+* **A. The IoT Gateway (Client Layer):** The Pi continuously executes the `IotSignalGenerator.py` script. In this role, it acts as the physical sensor node, actively generating real-time temperature and humidity fluctuations, constructing the JSON payloads, and sending out HTTP requests.
+* **B. The Central Application Server (Backend Layer):** Concurrently, the exact same Raspberry Pi hosts the entire Django web application (managing the `mysite` and `myapp` directories). It listens for incoming POST requests via the REST API, processes the telemetry, writes the records directly to the local `db.sqlite3` database, and serves the AdminLTE dashboard and real-time graphs.
 
-### 🏭 Why Edge Computing Matters in Industry
+### 2. Why Edge Computing Matters in Industry
 Deploying both the data generation and the data management layers on a local edge device (like the Raspberry Pi) provides several critical advantages for industrial facilities:
 
 * **Zero Cloud Dependency:** The system operates entirely on the Local Area Network (LAN). If external internet connectivity to the factory drops, the local monitoring, data logging, and alert systems remain 100% operational.
