@@ -18,6 +18,56 @@
 
 ---
 
+## 🌍 Edge Computing Architecture: The Raspberry Pi 5 Node
+
+A defining characteristic of this Industrial IoT simulation is its deployment strategy. Moving beyond a standard desktop development environment, the entire system was successfully configured to run autonomously on a single **Raspberry Pi 5**. This setup effectively demonstrates the power and feasibility of **Edge Computing** in modern industrial environments.
+
+### 🔄 The Dual-Role Setup
+The Raspberry Pi 5 operates as a complete, standalone micro-server. It is powerful enough to simultaneously execute two heavily distinct roles without performance bottlenecks:
+
+* **1. The IoT Gateway (Client Layer):** The Pi continuously executes the `IotSignalGenerator.py` script. In this role, it acts as the physical sensor node, actively generating real-time temperature and humidity fluctuations, constructing the JSON payloads, and sending out HTTP requests.
+* **2. The Central Application Server (Backend Layer):** Concurrently, the exact same Raspberry Pi hosts the entire Django web application (managing the `mysite` and `myapp` directories). It listens for incoming POST requests via the REST API, processes the telemetry, writes the records directly to the local `db.sqlite3` database, and serves the AdminLTE dashboard and real-time graphs.
+
+### 🏭 Why Edge Computing Matters in Industry
+Deploying both the data generation and the data management layers on a local edge device (like the Raspberry Pi) provides several critical advantages for industrial facilities:
+
+* **Zero Cloud Dependency:** The system operates entirely on the Local Area Network (LAN). If external internet connectivity to the factory drops, the local monitoring, data logging, and alert systems remain 100% operational.
+* **Ultra-Low Latency:** Because the critical sensor data does not have to travel to a remote cloud server and back, the time between a physical temperature spike and its appearance on the operator's dashboard is reduced to milliseconds.
+* **Data Security & Privacy:** Sensitive environmental or production data never leaves the physical premises of the facility, drastically reducing the exposure to external cyber threats.
+* **Cost Efficiency:** This architecture proves that robust, real-time environmental monitoring and data visualization can be achieved using low-cost, low-power microcomputers rather than relying on expensive enterprise server racks.
+
+## 📂 Project Directory Structure
+
+This repository follows a standard Django architecture, logically separated into the main configuration and the core application logic.
+
+### 📁 Root Directory
+The root directory acts as the foundation of the Django project, containing the central management files and folders.
+
+* **`myapp/`**: The core Django application directory developed specifically for sensor management.
+* **`mysite/`**: The project configuration directory, functioning as the central "brain" of the system.
+* **`db.sqlite3`**: The local SQLite database file responsible for storing all information related to users, devices, and signals.
+* **`manage.py`**: The essential command-line utility for executing administrative tasks, such as starting the development server (`runserver`) or creating an administrator account (`createsuperuser`).
+
+---
+
+### ⚙️ Core Application (`myapp/`)
+This directory defines the operational functionality, database structure, and logic of the system.
+
+* **`models.py`**: Contains the database table definitions for the system's entities, specifically the `Devices` and `Signals`.
+* **`views.py`**: Houses the application's core logic, managing API request handling and the visualization of incoming data.
+* **`serializers.py`**: A crucial file for the Django REST Framework. It converts database objects into JSON format, enabling seamless communication with the external Python script.
+* **`admin.py`**: Used to register the application's models within the Django Admin panel and to configure the AdminLTE interface.
+* **`signals.html`**: An HTML template file utilized for rendering and displaying the data visually within the web browser.
+
+---
+
+### 🛠️ Project Settings (`mysite/`)
+This directory contains the central configuration files that dictate the behavior of the entire Django project.
+
+* **`settings.py`**: The most critical configuration file. It declares the installed applications (such as `adminlte3`), defines security configurations (like `ALLOWED_HOSTS`), and establishes the database connection parameters.
+* **`urls.py`**: The central URL router of the project. It maps specific web addresses (e.g., `/admin/` or `/api/`) to their corresponding functions within the `myapp` application.
+* **`wsgi.py`**: The Web Server Gateway Interface file, which is necessary for connecting the project to standard web servers in a production deployment environment.
+
 ## 1️⃣ Part 1: Python Simulation (Devices & Signals)
 
 The core of this project is a robust Python script designed to simulate a real-world Industrial IoT environment. It acts as the "Client" in our architecture, generating environmental data and transmitting it to the Django server via HTTP requests.
