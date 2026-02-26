@@ -147,6 +147,7 @@ This view provides a log of all incoming data packets.
 * CRUD Operations: Signals can be edited or removed if data cleansing is required.
 
 <img width="450" height="400" alt="signals 2" src="https://github.com/user-attachments/assets/bbbe693e-c6b0-451c-a828-5710831ffb9c" />
+<br>
 <img width="450" height="400" alt="signals" src="https://github.com/user-attachments/assets/9c131012-8301-4212-b22e-a659cd7cc032" />
 
 ---
