@@ -50,7 +50,7 @@ The root directory acts as the foundation of the Django project, containing the 
 * **`manage.py`**: The essential command-line utility for executing administrative tasks, such as starting the development server (`runserver`) or creating an administrator account (`createsuperuser`).
 
 
-### ⚙️ Core Application (`myapp/`)
+### 1. Core Application (`myapp/`)
 This directory defines the operational functionality, database structure, and logic of the system.
 
 * **`models.py`**: Contains the database table definitions for the system's entities, specifically the `Devices` and `Signals`.
@@ -60,12 +60,19 @@ This directory defines the operational functionality, database structure, and lo
 * **`signals.html`**: An HTML template file utilized for rendering and displaying the data visually within the web browser.
 
 
-### 🛠️ Project Settings (`mysite/`)
+### 2. Project Settings (`mysite/`)
 This directory contains the central configuration files that dictate the behavior of the entire Django project.
 
 * **`settings.py`**: The most critical configuration file. It declares the installed applications (such as `adminlte3`), defines security configurations (like `ALLOWED_HOSTS`), and establishes the database connection parameters.
 * **`urls.py`**: The central URL router of the project. It maps specific web addresses (e.g., `/admin/` or `/api/`) to their corresponding functions within the `myapp` application.
 * **`wsgi.py`**: The Web Server Gateway Interface file, which is necessary for connecting the project to standard web servers in a production deployment environment.
+
+### 📂 Directory Access
+
+You can explore the complete configuration and application logic directly in the repository using the links below:
+
+* **[myapp (Core Application)](https://github.com/Thanos01skg/thesis/tree/main/django_app/myapp)**: Contains the database models, views, and API serializers.
+* **[mysite (Project Configuration)](https://github.com/Thanos01skg/thesis/tree/main/django_app/mysite)**: Contains the central settings, URL routing, and server configurations.
 
 ---
 
