@@ -54,7 +54,7 @@ You can view or download the complete `IotSignalGenerator.py` script from the li
 
 ---
 
-## 2️⃣ Part 2: Visualization & Administration (AdminLTE)
+## 2️⃣ Part 2: Administration (AdminLTE)
 
 To provide a professional, industrial-grade user interface, this project integrates **Django AdminLTE 3**. This modern UI wrapper enhances the default Django administration panel, offering a responsive dashboard for managing IoT devices and monitoring signals.
 
