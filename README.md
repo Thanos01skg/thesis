@@ -71,7 +71,7 @@ This directory contains the central configuration files that dictate the behavio
 
 You can explore the complete configuration and application logic directly in the repository using the link below:
 
-* **[myapp (Core Application) and mysite (Project Configuration)](https://github.com/Thanos01skg/thesis/tree/main/django_app/mysite)**
+* [myapp (Core Application) and mysite (Project Configuration)](https://github.com/Thanos01skg/thesis/tree/main/django_app/mysite)**
 
 ---
 
