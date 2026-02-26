@@ -146,6 +146,9 @@ This view provides a log of all incoming data packets.
 * Data Integrity: Allows admins to inspect specific signal values and types (e.g., verifying a temperature spike).
 * CRUD Operations: Signals can be edited or removed if data cleansing is required.
 
+<img width="629" height="452" alt="signals 2" src="https://github.com/user-attachments/assets/bbbe693e-c6b0-451c-a828-5710831ffb9c" />
+<img width="968" height="688" alt="signals" src="https://github.com/user-attachments/assets/9c131012-8301-4212-b22e-a659cd7cc032" />
+
 ---
 
 
