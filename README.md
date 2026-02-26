@@ -29,12 +29,12 @@ The Raspberry Pi 5 operates as a complete, standalone micro-server. It is powerf
 * **B. The Central Application Server (Backend Layer):** Concurrently, the exact same Raspberry Pi hosts the entire Django web application (managing the `mysite` and `myapp` directories). It listens for incoming POST requests via the REST API, processes the telemetry and writes the records directly to the local `db.sqlite3` database.
 
 ### 2. Why Edge Computing Matters in Industry
-Deploying both the data generation and the data management layers on a local edge device (like the Raspberry Pi) provides several critical advantages for industrial facilities:
+Deploying both the data generation and the data management layers on a local device (like the Raspberry Pi) provides several critical advantages for industrial facilities:
 
 * **Zero Cloud Dependency:** The system operates entirely on the Local Area Network (LAN). If external internet connectivity to the factory drops, the local monitoring, data logging, and alert systems remain 100% operational.
-* **Ultra-Low Latency:** Because the critical sensor data does not have to travel to a remote cloud server and back, the time between a physical temperature spike and its appearance on the operator's dashboard is reduced to milliseconds.
+* **Ultra-Low Latency:** Because the sensor data doesn't have to travel to a remote cloud server and back, so the time between a physical temperature spike and its appearance on the operator's dashboard is reduced to milliseconds.
 * **Data Security & Privacy:** Sensitive environmental or production data never leaves the physical premises of the facility, drastically reducing the exposure to external cyber threats.
-* **Cost Efficiency:** This architecture proves that robust, real-time environmental monitoring and data visualization can be achieved using low-cost, low-power microcomputers rather than relying on expensive enterprise server racks.
+* **Cost Efficiency:** This architecture proves that robust, real-time environmental monitoring and data visualization can be achieved using low-cost, low-power microcomputers rather.
 
 ## 📂 Project Directory Structure
 
