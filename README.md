@@ -69,10 +69,9 @@ This directory contains the central configuration files that dictate the behavio
 
 ### 📂 Directory Access
 
-You can explore the complete configuration and application logic directly in the repository using the links below:
+You can explore the complete configuration and application logic directly in the repository using the link below:
 
-* **[myapp (Core Application)](https://github.com/Thanos01skg/thesis/tree/main/django_app/myapp)**: Contains the database models, views, and API serializers.
-* **[mysite (Project Configuration)](https://github.com/Thanos01skg/thesis/tree/main/django_app/mysite)**: Contains the central settings, URL routing, and server configurations.
+* **[myapp (Core Application) and mysite (Project Configuration)](https://github.com/Thanos01skg/thesis/tree/main/django_app/mysite)**
 
 ---
 
